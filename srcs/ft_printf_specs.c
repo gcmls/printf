@@ -12,8 +12,73 @@
 
 #include "ft_printf.h"
 
-//define get_specs()
-//define get_flags()
-//define get_width()
-//define get_precision()
-//define get_size()
+
+/*
+** Get specs from fmt string
+** @param:	- [const char **] fmt
+**			- [t_fmt] specs
+** Line-by-line comments:
+** @line-line	comment
+*/
+
+void	get_specs(const char **fmt, t_fmt specs)
+{
+
+}
+
+
+/*
+** Get flags from fmt string
+** @param:	- [const char*] fmt
+**			- [char *] flags
+** Line-by-line comments:
+** @line-line	comment
+*/
+
+void	get_flags(const char **fmt, char *flags)
+{
+
+}
+
+/*
+** Get width from fmt string
+** @param:	- [const char*] fmt
+** @return: [int] width
+** Line-by-line comments:
+** @line-line	comment
+*/
+
+int		get_width(cont char **fmt)
+{
+	int width;
+
+	width = 0;
+}
+
+/*
+** Get precision from fmt string
+** @param:	- [const char*] fmt
+** @return: [int] precision
+** Line-by-line comments:
+** @line-line	comment
+*/
+
+int		get_precision(const char **fmt)
+{
+	int precision;
+
+	precision = 0;
+}
+
+/*
+** Get size from fmt string
+** @param:	- [const char*] fmt
+** @param:	- [char *] size
+** Line-by-line comments:
+** @line-line	comment
+*/
+
+void	get_size(const char **fmt, char *size)
+{
+	
+}
