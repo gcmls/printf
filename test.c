@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdarg.h>
+#include <stdio.h>
 
 void	foo(char *fmt, ...)   /* '...' is C syntax for a variadic function */
 {
@@ -37,4 +38,9 @@ void	foo(char *fmt, ...)   /* '...' is C syntax for a variadic function */
 			break;
 		}
 	va_end(ap);
+}
+
+int main()
+{
+	foo("Teste %c %s", '1', "a testar...");
 }

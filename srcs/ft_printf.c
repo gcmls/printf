@@ -20,7 +20,7 @@ int		ft_printf(const char *fmt, ...)
 	while (*fmt++)
 	{
 		if (*fmt == '%')
-			convert(&fmt, specs);
+			handle_percent_sign(&fmt, specs);
 		else
 		{
 			ft_putchar(*fmt);
@@ -31,7 +31,7 @@ int		ft_printf(const char *fmt, ...)
 	return (g_printed_chars);
 }
 
-void	convert(const char **fmt, t_fmt specs)
+void	handle_percent_sign(const char **fmt, t_fmt specs)
 {
 	//set specs
 	//print
