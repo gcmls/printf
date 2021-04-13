@@ -22,33 +22,38 @@
 void	ft_print_types(t_fmt *specs)
 {
 	if (specs->type == 'c' || specs->type == "C")
-		//print char
+		ft_print_char(specs);
 	else if (specs->type == 'd' || specs->type == 'i')
-		//print signed int
+		ft_print_s_int(specs);
 	else if (specs->type == 'o' || specs->type == 'u')
-		//print unsigned int
+		ft_print_u_int(specs);
 	else if (specs->type == 'x' || specs->type == 'X')
-		//print hexadecimal
+		ft_print_hex(specs);
 	else if (specs->type == 'e' || specs->type == 'E')
-		//print exp
+		ft_print_exp(specs);
 	else if (specs->type == 'f' || specs->type == 'F')
-		//print float
+		ft_print_float(specs);
 	else if (specs->type == 'g' || specs->type == 'G')
-		//print	g
+		ft_print_g(specs);
 	else if (specs->type == 'a' || specs->type == 'A')
-		//print	a
+		ft_print_a(specs);
 	else if (specs->type == 'n')
-		//print n
+		ft_print_n(specs);
 	else if (specs->type == 'p')
-		//print pointer
+		ft_print_ptr(specs);
 	else if (specs->type == 's' || specs->type == 'S')
-		//print string
+		ft_print_str(specs);
 	else if (specs->type == 'Z')
-		//print z
+		ft_print_z(specs);
 }
 
 
-void	ft_print_char(t_fmt *specs);
+void	ft_print_char(t_fmt *specs)
+{
+	
+}
+
+
 void	ft_print_u_int(t_fmt *specs);
 void	ft_print_s_int(t_fmt *specs);
 void	ft_print_hex(t_fmt *specs);
