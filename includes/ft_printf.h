@@ -19,12 +19,17 @@
 **	Global VA 
 */
 
-va_list		g_ap;
-int			g_printed_chars;
+typedef struct	s_arg_char
+{
+	va_list		ap;
+	int			printed_chars;
+}				t_arg_char;
+
 
 /*
 **	Specs 
 */
 
+void	ft_print_types(t_fmt *specs);
 
 #endif

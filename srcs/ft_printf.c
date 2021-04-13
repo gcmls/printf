@@ -14,25 +14,27 @@
 
 int		ft_printf(const char *fmt, ...)
 {
-	t_fmt specs;
-	g_printed_chars = 0;
-	va_start(g_ap, fmt);
+	t_fmt *specs;
+	t_arg_char *util;
+	va_start(util->ap, fmt);
 	while (*fmt++)
 	{
 		if (*fmt == '%')
-			handle_percent_sign(&fmt, specs);
+			handle_percent_sign(&fmt, specs, util);
 		else
 		{
 			ft_putchar(*fmt);
-			g_printed_chars++;
+			util->printed_chars++;
 		}
 	}
-	va_end(g_ap);
-	return (g_printed_chars);
+	va_end(util->ap);
+	return (util->printed_chars);
 }
 
-void	handle_percent_sign(const char **fmt, t_fmt specs)
+void	handle_percent_sign(const char **fmt, t_fmt *specs, t_arg_char *util)
 {
+	specs->type = *fmt++;
+	ft_print_types(specs);
 	//set specs
 	//print
 }

@@ -12,7 +12,6 @@
 
 #include "ft_printf.h"
 
-
 /*
 ** Get specs from fmt string
 ** @param:	- [const char **] fmt
@@ -26,7 +25,6 @@ void	ft_init_specs(const char **fmt, t_fmt specs)
 
 }
 
-
 /*
 ** Get flags from fmt string
 ** @param:	- [const char*] fmt
@@ -37,7 +35,7 @@ void	ft_init_specs(const char **fmt, t_fmt specs)
 
 void	ft_init_flags(const char **fmt, char *flags)
 {
-
+	
 }
 
 /*
