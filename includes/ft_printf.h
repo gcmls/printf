@@ -25,11 +25,26 @@ typedef struct	s_arg_char
 	int			printed_chars;
 }				t_arg_char;
 
+typedef struct  s_fmt
+{
+	int plus;
+	int minus;
+	int zero;
+	int space;
+	int star;
+	int display;
+	int width;
+	int precision;
+	char type;
+	int len;
+	int ret;
+}				t_fmt;
 
-/*
-**	Specs 
-*/
+# define AP 				util->ap
+# define PRINTED_CHARS		util->printed_chars
+# define TYPE				specs->type
 
-void	ft_print_types(t_fmt *specs);
+void	print_types(t_fmt *specs, t_arg_char *util);
+void	init_specs(t_fmt *specs);
 
 #endif

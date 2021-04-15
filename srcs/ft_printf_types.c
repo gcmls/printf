@@ -13,57 +13,58 @@
 #include "ft_printf.h"
 
 /*
-** Print different types of variables based on the specs->type
+** Print different types of variables based on the TYPE
 ** @param:	- [t_ftm] specs
 ** Line-by-line comments:
 ** @line-line	comment
 */
 
-void	ft_print_types(t_fmt *specs)
+void	print_types(t_fmt *specs, t_arg_char *util)
 {
-	if (specs->type == 'c' || specs->type == "C")
-		ft_print_char(specs);
-	else if (specs->type == 'd' || specs->type == 'i')
-		ft_print_s_int(specs);
-	else if (specs->type == 'o' || specs->type == 'u')
-		ft_print_u_int(specs);
-	else if (specs->type == 'x' || specs->type == 'X')
-		ft_print_hex(specs);
-	else if (specs->type == 'e' || specs->type == 'E')
-		ft_print_exp(specs);
-	else if (specs->type == 'f' || specs->type == 'F')
-		ft_print_float(specs);
-	else if (specs->type == 'g' || specs->type == 'G')
-		ft_print_g(specs);
-	else if (specs->type == 'a' || specs->type == 'A')
-		ft_print_a(specs);
-	else if (specs->type == 'n')
-		ft_print_n(specs);
-	else if (specs->type == 'p')
-		ft_print_ptr(specs);
-	else if (specs->type == 's' || specs->type == 'S')
-		ft_print_str(specs);
-	else if (specs->type == 'Z')
-		ft_print_z(specs);
+	if (TYPE == 'c' || TYPE == "C")
+		ft_print_char(specs, AP);
+	else if (TYPE == 'd' || TYPE == 'i')
+		ft_print_s_int(specs, AP);
+	else if (TYPE == 'o' || TYPE == 'u')
+		ft_print_u_int(specs, AP);
+	else if (TYPE == 'x' || TYPE == 'X')
+		ft_print_hex(specs, AP);
+	else if (TYPE == 'e' || TYPE == 'E')
+		ft_print_exp(specs, AP);
+	else if (TYPE == 'f' || TYPE == 'F')
+		ft_print_float(specs, AP);
+	else if (TYPE == 'g' || TYPE == 'G')
+		ft_print_g(specs, AP);
+	else if (TYPE == 'a' || TYPE == 'A')
+		ft_print_a(specs, AP);
+	else if (TYPE == 'n')
+		ft_print_n(specs, AP);
+	else if (TYPE == 'p')
+		ft_print_ptr(specs, AP);
+	else if (TYPE == 's' || TYPE == 'S')
+		ft_print_str(specs, AP);
+	else if (TYPE == 'Z')
+		ft_print_z(specs, AP);
+	else if (TYPE == '%')
+		ft_print_perc(specs, AP);
 }
 
 
-void	ft_print_char(t_fmt *specs)
+void	ft_print_char(t_fmt *specs, t_arg_char *util)
 {
-	
+
 }
+void	ft_print_u_int(t_fmt *specs, t_arg_char *util);
+void	ft_print_s_int(t_fmt *specs, t_arg_char *util);
+void	ft_print_hex(t_fmt *specs, t_arg_char *util);
 
+void	ft_print_exp(t_fmt *specs, t_arg_char *util);
+void	ft_print_float(t_fmt *specs, t_arg_char *util);
+void	ft_print_g(t_fmt *specs, t_arg_char *util);
+void	ft_print_a(t_fmt *specs, t_arg_char *util);
 
-void	ft_print_u_int(t_fmt *specs);
-void	ft_print_s_int(t_fmt *specs);
-void	ft_print_hex(t_fmt *specs);
-
-void	ft_print_exp(t_fmt *specs);
-void	ft_print_float(t_fmt *specs);
-void	ft_print_g(t_fmt *specs);
-void	ft_print_a(t_fmt *specs);
-
-void	ft_print_n(t_fmt *specs);
-void	ft_print_ptr(t_fmt *specs);
-void	ft_print_str(t_fmt *specs);
-void	ft_print_z(t_fmt *specs);
+void	ft_print_n(t_fmt *specs, t_arg_char *util);
+void	ft_print_ptr(t_fmt *specs, t_arg_char *util);
+void	ft_print_str(t_fmt *specs, t_arg_char *util);
+void	ft_print_z(t_fmt *specs, t_arg_char *util);
+void	ft_print_perc(t_fmt *specs, t_arg_char *util);

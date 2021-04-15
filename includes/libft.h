@@ -6,7 +6,7 @@
 /*   By: gcosta-m <gcosta-m@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 18:41:06 by gcmls             #+#    #+#             */
-/*   Updated: 2021/03/09 18:01:59 by gcosta-m         ###   ########.fr       */
+/*   Updated: 2021/04/15 19:03:14 by gcosta-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,6 @@ typedef struct	s_list
 	void			*content;
 	struct s_list	*next;
 }				t_list;
-
-//size of arrays to define
-typedef struct  s_fmt
-{
-	char flags[?];
-	int width;
-	int precision;
-	char size[?];
-	char type;
-}				t_fmt;
 
 /*
 **	Char

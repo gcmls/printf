@@ -20,9 +20,19 @@
 ** @line-line	comment
 */
 
-void	ft_init_specs(const char **fmt, t_fmt specs)
+void	ft_init_specs(t_fmt *specs)
 {
-
+	specs->minus = 0;
+	specs->plus = 0;
+	specs->zero = 0;
+	specs->space = 0;
+	specs->star = 0;
+	specs->display = 1;
+	specs->width = 0;
+	specs->precision = 0;
+	specs->type = 0;
+	specs->len = 0;
+	specs->ret = 0;
 }
 
 /*
@@ -33,7 +43,7 @@ void	ft_init_specs(const char **fmt, t_fmt specs)
 ** @line-line	comment
 */
 
-void	ft_init_flags(const char **fmt, char *flags)
+void	get_flags(const char **fmt, char *flags)
 {
 	
 }
@@ -46,7 +56,7 @@ void	ft_init_flags(const char **fmt, char *flags)
 ** @line-line	comment
 */
 
-int		ft_init_width(const char **fmt)
+int		get_width(const char **fmt)
 {
 	int width;
 
@@ -61,7 +71,7 @@ int		ft_init_width(const char **fmt)
 ** @line-line	comment
 */
 
-int		ft_init_precision(const char **fmt)
+int		get_precision(const char **fmt)
 {
 	int precision;
 
@@ -76,7 +86,7 @@ int		ft_init_precision(const char **fmt)
 ** @line-line	comment
 */
 
-void	ft_init_size(const char **fmt, char *size)
+void	get_size(const char **fmt, char *size)
 {
 	
 }

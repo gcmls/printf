@@ -12,29 +12,49 @@
 
 #include "ft_printf.h"
 
-int		ft_printf(const char *fmt, ...)
+int	ft_printf(const char *fmt, ...)
 {
-	t_fmt *specs;
 	t_arg_char *util;
-	va_start(util->ap, fmt);
-	while (*fmt++)
-	{
-		if (*fmt == '%')
-			handle_percent_sign(&fmt, specs, util);
-		else
-		{
-			ft_putchar(*fmt);
-			util->printed_chars++;
-		}
-	}
-	va_end(util->ap);
-	return (util->printed_chars);
+	int ret;
+
+	va_start(AP, fmt);
+	ret = ft_printf_aux(fmt, util);
+	va_end(AP);
+	return (ret);
 }
 
-void	handle_percent_sign(const char **fmt, t_fmt *specs, t_arg_char *util)
+int	ft_printf_aux(const char *fmt, t_arg_char *util)
 {
-	specs->type = *fmt++;
-	ft_print_types(specs);
-	//set specs
-	//print
+	t_fmt specs;
+	int start;
+	int ret;
+	int i;
+
+	i = 0;
+	ret = 0;
+	start = 0;
+	while (fmt[i])
+	{
+		if (fmt[i] == '%')
+		{
+			print(fmt, start, i);
+			ret += (i - start);
+			init_specs(&specs);
+			if (specs.type == 0 || specs.type == -1)
+				i++;
+			print_types(&specs, AP);
+			ret += specs.ret;
+			start = i;
+		}
+		if (fmt[i] && fmt[i] != '%')
+			i++;
+	}
+	print(fmt, start, i);
+	return (ret + i - start);
+}
+
+void	print(const char *fmt, int start, int end)
+{
+	while (start < end && fmt[start])
+		ft_putchar(fmt[start++]);	
 }
